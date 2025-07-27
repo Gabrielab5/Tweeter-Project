@@ -94,26 +94,3 @@ const Tweeter = function () {
         removeComment: removeComment
     };
 };
-
-//--- Test for Logic---
-const tweeter = Tweeter();
-console.log("Initial posts:", JSON.stringify(tweeter.getPosts()));
-
-// Test adding a post
-tweeter.addPost("This is my own post!");
-console.log("After adding a post:", tweeter.getPosts());
-// Should add a post like: {text: "This is my own post!", id: "p3", comments: []}
-
-// Test removing a post
-tweeter.removePost("p1");
-console.log("After removing p1:", tweeter.getPosts());
-// Should only have two posts left (p2 and p3)
-
-// Test adding comments
-tweeter.addComment("p3", "Damn straight it is!");
-tweeter.addComment("p2", "Second the best!");
-console.log("After adding comments:", tweeter.getPosts());
-
-// Test removing comments
-tweeter.removeComment("p2", "c6");
-console.log("After removing c6 from p2:", tweeter.getPosts());
